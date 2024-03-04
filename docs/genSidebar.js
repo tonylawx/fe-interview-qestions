@@ -49,6 +49,6 @@ function createSidebarContent(dir, parentPath = '') {
 // 创建统一的侧边栏文件
 const sidebarContent = createSidebarContent(docsDir);
 const sidebarFilePath = path.join(docsDir, '_sidebar.md');
-fs.writeFileSync(sidebarFilePath, `# 侧边栏\n\n${sidebarContent}`, 'utf8');
+fs.writeFileSync(sidebarFilePath, `# 前端面试总结\n\n${sidebarContent}`, 'utf8');
 
 console.log('统一的侧边栏文件 _sidebar.md 已生成。');
