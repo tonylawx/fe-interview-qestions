@@ -27,7 +27,7 @@ function createSidebarContent(dir, parentPath = '') {
             // 如果是目录且不是 img 文件夹，添加目录项
             const relativeDirPath = path.relative(docsDir, dir);
             const sidebarPath = parentPath ? `${parentPath}/${file.name}` : file.name;
-            sidebarContent += `- [${file.name}](/${sidebarPath}/)\n`;
+            sidebarContent += `- ${file.name}\n`;
 
             // 递归调用以处理子目录
             const subSidebarContent = createSidebarContent(path.join(dir, file.name), sidebarPath);
@@ -49,6 +49,6 @@ function createSidebarContent(dir, parentPath = '') {
 // 创建统一的侧边栏文件
 const sidebarContent = createSidebarContent(docsDir);
 const sidebarFilePath = path.join(docsDir, '_sidebar.md');
-fs.writeFileSync(sidebarFilePath, `# 前端面试总结\n\n${sidebarContent}`, 'utf8');
+fs.writeFileSync(sidebarFilePath, `# 前端面试总结\n${sidebarContent}`, 'utf8');
 
 console.log('统一的侧边栏文件 _sidebar.md 已生成。');
